@@ -1,4 +1,5 @@
 #!/bin/bash
+SCRIPT=$0
 
 function log() {
     local LEVEL=$1
@@ -15,7 +16,7 @@ Usage: build.sh <VERSION> [<RELEASE>]
 
 where VERSION is the version number of the github release and RELEASE the
 release number. If RELEASE is omitted, it defaults to 1.
- 
+
 EOF
 }
 
@@ -28,7 +29,7 @@ function get_version() {
 }
 
 function init() {
-    RPMBUILD_DIR=$(dirname ${SCRIPT_DIR})
+    RPMBUILD_DIR=$(dirname "${SCRIPT}")
     SPECS_DIR=${RPMBUILD_DIR}/SPECS
     RPMS_DIR=${RPMBUILD_DIR}/RPMS
     SRPMS_DIR=${RPMBUILD_DIR}/SRPMS
@@ -76,7 +77,7 @@ function get_archives() {
         if [ -f check_etcd-${VERSION}.tar.gz ]; then
             log 4 Using already fetched check_etcd-${VERSION}
         else
-            curl -sSjL https://github.com/joernott/check_etcd/releases/download/${VERSION}/check_etcd-${VERSION}.tar.gz -o check_etcd-${VERSION}.tar.gz
+            curl -sSjL "https://github.com/joernott/check_etcd/archive/refs/tags/v${VERSION}.tar.gz" -o "${SOURCES_DIR}/check_etcd-${VERSION}.tar.gz"
         fi
     fi
 }
