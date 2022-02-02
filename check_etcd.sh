@@ -141,8 +141,9 @@ function get_val() {
   RESULT=$?
   printf -v VALUE "%.f" "$(echo "${DATA}"|awk '{print $2}')"
   if [ ${RESULT} -ne 0 ]; then
-    MESSAGE="${MESSAGE}\nUnknown: Could not find a match for ${MATCH} in ${FILE}."
-    STATE=3
+    # If the statistics is missing in the file, we consider it OK as some of them only appear conditionally
+    VALUE=0
+    RESULT=0
   fi
   return ${RESULT}
 }
