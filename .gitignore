@@ -1,6 +1,7 @@
-*~
-rpmbuild/SOURCES/*.tar.gz
-rpmbuild/RPMS/*/*.rpm
-rpmbuild/SRPMS/*
-rpmbuild/BUILDROOT/*
-rpmbuild/BUILD/*
+SPECS/*
+SOURCES/*
+BUILD/*
+BUILDROOT/*
+RPMS/*
+SRPMS/*
+

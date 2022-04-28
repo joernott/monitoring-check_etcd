@@ -1,8 +1,8 @@
-! check_etcd
+#monitopring-check_etcd
 A Nagios/Icinga2 check to monitor etcd cluster members written in bash.
 This check makes use of etcdctl and curl to the /metrics endpoint.
 
-!!Usage
+##Usage
 ```
 /usr/lib64/nagios/plugins/check_etcd.sh -w num -c num [-H host] [ -P port] [-S] [-n] [-N] [-m "label|type|warn|crit|match"]
 -w defines the warning threshold. If less lines are reporting "is healthy",
@@ -22,10 +22,10 @@ This check makes use of etcdctl and curl to the /metrics endpoint.
    may be empty. Match is the string to grep for in the output.
 ```
 
-!!License
+##License
 BSD 3-Clause License
 
-!! Build instructions for the RPM
+##Build instructions for the RPM
 There is a rpmbuild folder containing the spec file. The provided build.sh
 script will build a rpm based on the tagged version on github. You need to provide
 the version number and optionally a release as parameters to the script.

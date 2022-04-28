@@ -232,5 +232,6 @@ fi
 if [ ${CURL} -ne 0 ]; then
   check_curl
 fi
-echo -e "${MESSAGE:1}"
+echo -e "${MESSAGE:2}"
 exit ${STATE}
+
