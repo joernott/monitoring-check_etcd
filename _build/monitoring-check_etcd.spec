@@ -11,7 +11,6 @@ Group:          System/Monitoring
 Url:            https://github.com/joernott/monitoring-check_etcd
 Source0:        monitoring-check_etcd-%{version}.tar.gz
 BuildArch:      noarch
-Requires:       etcd
 Requires:       curl
 
 %description
